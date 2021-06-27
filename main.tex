@@ -1,0 +1,77 @@
+\documentclass[a4paper, 14pt]{extreport}
+
+\usepackage{cmap}
+\usepackage{paratype}
+\usepackage[unicode=true, hidelinks]{hyperref}
+\usepackage[utf8]{inputenc}
+%\usepackage{mathtext}
+\usepackage[T2A, OT1]{fontenc}
+
+\usepackage[russian]{babel}
+	\usepackage{indentfirst}
+
+\usepackage[top=2cm, bottom = 3cm, footskip=1.5cm, left=3.5cm, right=2cm]{geometry}
+\usepackage[onehalfspacing]{setspace}
+\setlength{\parindent}{1.25cm}
+\setlength{\parskip}{1ex plus .5ex minus .3ex}
+\setlength{\skip\footins}{.6in plus .3in minus .2in}
+
+\pretolerance=9999
+\tolerance=9999
+\hyphenpenalty=9999
+\emergencystretch=2cm
+
+\usepackage{amsmath}
+\usepackage{graphicx}
+\usepackage{color}
+\usepackage{enumitem}
+	\setlist{nolistsep, itemsep=\parskip, leftmargin=!}
+\usepackage[bottom]{footmisc}
+\usepackage{array}
+	\renewcommand{\arraystretch}{1.5}
+\usepackage{multicol}
+\usepackage{pdflscape}
+\usepackage{tikz, pgfplots}
+	\pgfplotsset{compat = 1.14}
+\usepackage{lscape}
+\usepackage{hhline}
+\usepackage{multirow}
+\AtBeginDocument{\def\contentsname{Содержание}}
+
+\usepackage{chngcntr}
+	\counterwithout{footnote}{chapter}
+\usepackage{tocloft}
+
+\newcommand\MyBox[2]{
+	\fbox{\lower0.75cm
+		\vbox to 3cm{\vfil
+			\hbox to 3cm{\hfil\parbox{2.4cm}{#1\\#2}\hfil}
+			\vfil}%
+	}%
+}
+
+\bibliographystyle{ugost2008}
+
+\begin{document}	
+\include{contents/titlepage}
+\include{contents/abstract}
+% Front matter
+\setcounter{page}{3}
+%\include{contents/abstract}
+	\setstretch{1.2}
+\tableofcontents
+	\setstretch{1.25}
+
+% Main matter
+
+\include{contents/intro}
+\include{contents/arch}
+\include{contents/realization}
+\include{contents/conclusion}
+\include{contents/bibliography}
+
+% Back matter
+\appendix
+%\include{contents/appendixes/...}
+
+\end{document}
